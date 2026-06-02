@@ -16,6 +16,12 @@ const authSlice = createSlice({
     logout : (state) => {
         sessionStorage.clear();
         return initialState;
+    },
+    socialLoginSuccess: (state, action) => {
+        state.isLoggedIn = true;
+        state.username = action.payload.username;
+        state.error = null;
+        sessionStorage.setItem("auth", JSON.stringify({ ...state }));
     }
   },
   extraReducers: (builder) => {
