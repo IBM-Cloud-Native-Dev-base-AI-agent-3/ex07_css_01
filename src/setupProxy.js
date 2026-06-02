@@ -8,7 +8,7 @@ module.exports = function (app) {
       target: "https://flask-maturely-stopwatch.ngrok-free.dev",
       changeOrigin: true,
       pathRewrite: {
-        "^/api": "/api",
+        "^/": "/api/",
       },
     }),
   );
