@@ -1,0 +1,1153 @@
+/*
+ * rental.css - '내집다오' 프리미엄 청약진단 전용 스타일 시트 (고해상도 반응형 최적화)
+ * -------------------------------------------------------------
+ * 1400px 기준 화면부터 모바일 320px 전체 디바이스에서 최적의 사용성을 발휘하도록
+ * 유연한 그리드 레이아웃과 반응형 타이포그래피, 인체공학적 버튼 크기를 보장합니다.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+:root {
+  --font-sans: "Inter", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --bg-primary: #f3f6f9;
+  --color-dark: #1a1f26;
+  --color-white: #ffffff;
+  --color-blue: #2563eb;
+  --color-blue-hover: #1d4ed8;
+  --color-blue-light: #eff6ff;
+  --color-blue-border: #d0e7ff;
+  --color-gray-border: #cbd5e1;
+  --color-gray-light: #f8fafc;
+  --color-gray-text: #475569;
+  --color-gray-muted: #94a3b8;
+  --max-width: 1400px;
+}
+/* 테마 디자인 스코프 변수 */
+.rental-theme {
+  --primary-blue: #1e3a8a;
+  --color-blue: #2563eb;
+  --color-hover: #1d4ed8;
+  --success-green: #10b981;
+  --danger-red: #ef4444;
+  --bg-light: #f8fafc;
+  --border-gray: #cbd5e1;
+  --text-dark: #0f172a;
+  --text-gray: #475569;
+  --text-muted: #94a3b8;
+}
+
+/* 폼 페이지 상단 헤더 */
+.rental-title-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.sparkle-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff6ff;
+  border: 1px solid #cbd5e1;
+  color: var(--color-blue);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.rental-main-heading {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .rental-main-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.rental-sub-heading {
+  font-size: 13.5px;
+  color: var(--text-gray);
+  max-width: 1400px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+/* 제출 성공 및 카드 로딩 컨테이너 */
+.success-screen-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .success-card {
+    padding: 40px;
+  }
+}
+
+.success-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #ecfdf5;
+  border-radius: 16px;
+  color: var(--success-green);
+  border: 1px solid #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.success-title {
+  font-size: 22px;
+  font-weight: 950;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.success-description {
+  font-size: 13.5px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-top: 12px;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.success-strong-text {
+  color: var(--color-blue);
+  font-weight: 800;
+}
+
+/* 전체 기입 폼 레이아웃 */
+.rental-form-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* 프리미엄 전용 폼 카드 */
+.rental-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.015);
+  padding: 24px 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .rental-card {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .rental-card {
+    padding: 40px;
+  }
+}
+
+.rental-card:hover {
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.04);
+  border-color: rgba(37, 99, 235, 0.12);
+}
+
+/* 입력 행 정렬 및 마진 */
+.form-group-spaced {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.group-label-decor {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+}
+
+.group-desc-text {
+  font-size: 12px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-top: -4px;
+}
+
+/* 현재 선택값 확인 뱃지 가중치 */
+.current-selection-alert {
+  margin-top: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #eff6ff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0e7ff;
+}
+
+/* 모바일 1칸 / 태블릿 이상 2칸 반응형 그리드 */
+.form-input-grid-2col {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .form-input-grid-2col {
+    grid-template-cols: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* 공용 인터페이스 입력창 */
+.rental-input {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid var(--border-gray);
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rental-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.rental-input:focus {
+  border-color: var(--color-blue);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 반응형 셀렉트 튜닝 */
+.rental-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='2.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+  padding-right: 36px;
+}
+
+.rental-select:disabled {
+  background-color: var(--bg-light);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+}
+
+/* 입력 요소 데코레이터 영역 */
+.input-decoration-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 700;
+  user-select: none;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: var(--text-gray);
+  font-weight: 700;
+  user-select: none;
+}
+
+.rental-input-padded-prefix {
+  padding-left: 32px;
+}
+
+/* 주택소유 및 처분이력 예/아니오 2칸 그리드 */
+.rental-toggle-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .rental-toggle-grid {
+    grid-template-cols: repeat(2, 1fr);
+  }
+}
+
+.rental-toggle-card {
+  border: 1.5px solid var(--border-gray);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rental-toggle-card:hover {
+  background-color: var(--bg-light);
+  border-color: var(--text-muted);
+}
+
+.rental-toggle-card.active {
+  border-color: var(--color-blue);
+  background-color: #eff6ff;
+  color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* 수평 3컬럼 그리드 (소득비율 특화) */
+.rental-three-column-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 480px) {
+  .rental-three-column-grid {
+    grid-template-cols: repeat(3, 1fr);
+  }
+}
+
+.income-toggle-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: center;
+}
+
+.income-toggle-subtext {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-gray);
+}
+
+/* 특별자격 체크리스트형 그리드 */
+.rental-checkbox-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 8px;
+}
+
+@media (min-width: 400px) {
+  .rental-checkbox-grid {
+    grid-template-cols: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .rental-checkbox-grid {
+    grid-template-cols: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .rental-checkbox-grid {
+    grid-template-cols: repeat(5, 1fr);
+  }
+}
+
+.rental-checkbox-chip {
+  border: 1.5px solid var(--border-gray);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.rental-checkbox-chip:hover {
+  background-color: var(--bg-light);
+  border-color: var(--text-muted);
+}
+
+.rental-checkbox-chip.active {
+  border-color: var(--color-blue);
+  background-color: #eff6ff;
+  color: var(--color-blue);
+}
+
+.checkbox-dot-outer {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--border-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkbox-dot-outer.active {
+  border-color: var(--color-blue);
+  background-color: var(--color-blue);
+}
+
+.checkbox-dot-inner {
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* 가독성 테두리 전형 및 구분선 */
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 20px 0;
+}
+
+/* 프리미엄 전형 알파벳 태그 */
+.alpha-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 900;
+  background-color: #eff6ff;
+  color: var(--color-blue);
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* 하이엔드형 공용 액션 버튼 */
+.btn-primary {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  font-size: 13.5px;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-blue-hover);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--text-gray);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--border-gray);
+  font-size: 13.5px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-light);
+  border-color: var(--text-muted);
+  color: var(--text-dark);
+}
+
+.btn-large-flat {
+  width: 100%;
+  height: 52px;
+}
+
+.submit-wrapper {
+  padding-top: 12px;
+}
+
+
+/* ========================================================
+   [리스트 전용] '마이페이지' / 신청 리스트 결과 레이아웃
+   ======================================================== */
+
+/* 1400px 내에서 반응형 2글 상호연결 그리드 배열 */
+.list-layout-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .list-layout-grid {
+    grid-template-cols: 8fr 4fr;
+    gap: 32px;
+  }
+}
+
+.list-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 프리미엄 리포트 헤더 */
+.report-header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.1);
+}
+
+@media (min-width: 640px) {
+  .report-header {
+    padding: 32px;
+  }
+}
+
+.report-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (min-width: 640px) {
+  .report-header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.report-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.report-badge-gold-icon {
+  color: #fbbf24;
+}
+
+.report-main-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .report-main-title {
+    font-size: 24px;
+  }
+}
+
+.report-sub-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.report-header-badge-stat {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  align-self: flex-start;
+}
+
+@media (min-width: 640px) {
+  .report-header-badge-stat {
+    align-self: auto;
+  }
+}
+
+.report-stat-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.report-stat-val {
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+/* 기출 리스트 정보용 2열 반응형 그리드 */
+.report-grid {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .report-grid {
+    grid-template-cols: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+.report-item {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+}
+
+@media (min-width: 640px) {
+  .report-item {
+    padding: 20px;
+  }
+}
+
+.report-item-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.report-item-label-icon {
+  color: var(--color-blue);
+  flex-shrink: 0;
+}
+
+.report-item-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2px;
+  gap: 8px;
+}
+
+.report-value-main-text {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+@media (min-width: 640px) {
+  .report-value-main-text {
+    font-size: 15px;
+  }
+}
+
+.report-status-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.report-status-badge.green {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.report-status-badge.red {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.report-status-badge.amber {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.report-status-badge.gray {
+  background-color: #f8fafc;
+  color: var(--text-gray);
+  border: 1px solid #e2e8f0;
+}
+
+/* 2열 스팬 영역 */
+.report-span-2col {
+  grid-column: 1 / -1;
+}
+
+.asset-report-inner {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+@media (min-width: 480px) {
+  .asset-report-inner {
+    grid-template-cols: repeat(2, 1fr);
+  }
+}
+
+.asset-col {
+  padding-bottom: 6px;
+}
+
+@media (min-width: 480px) {
+  .asset-col {
+    padding-bottom: 0px;
+  }
+  .asset-border-right {
+    border-right: 1px solid #cbd5e1;
+    padding-right: 12px;
+  }
+}
+
+.asset-tiny-label {
+  font-size: 9.5px;
+  color: var(--text-muted);
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.asset-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+@media (min-width: 640px) {
+  .asset-val {
+    font-size: 15px;
+  }
+}
+
+.asset-val.highlight-blue {
+  color: var(--color-blue);
+}
+
+/* 과거 계약 저촉 이력 표시 */
+.history-status-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.history-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.history-status-dot.green {
+  background-color: var(--success-green);
+}
+
+.history-status-dot.red {
+  background-color: var(--danger-red);
+}
+
+.history-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-gray);
+  line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+  .history-text {
+    font-size: 13px;
+  }
+}
+
+/* 리포트 액션 단추 라벨 */
+.report-actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0;
+  padding: 16px 0;
+  border-top: 1px solid #cbd5e1;
+}
+
+@media (min-width: 480px) {
+  .report-actions-container {
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+  }
+}
+
+.btn-danger-bg {
+  color: var(--danger-red);
+  border-color: #fca5a5;
+}
+
+.btn-danger-bg:hover {
+  background-color: #fef2f2;
+  border-color: var(--danger-red);
+  color: #b91c1c;
+}
+
+
+/* ========================================================
+   [우측 사이드바] 사이드바 자산 지표 및 추천 타겟 카드
+   ======================================================== */
+
+.list-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .list-sidebar {
+    gap: 24px;
+  }
+}
+
+.sidebar-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.005);
+}
+
+@media (min-width: 640px) {
+  .sidebar-card {
+    padding: 24px;
+  }
+}
+
+.sidebar-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.sidebar-card-icon {
+  color: var(--color-blue);
+  flex-shrink: 0;
+}
+
+.sidebar-card-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--text-dark);
+}
+
+/* 자산 한동비 지표 바 장식 */
+.progress-list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progress-item-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress-header-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.progress-item-title {
+  color: var(--text-gray);
+}
+
+.progress-item-val {
+  font-weight: 800;
+}
+
+.progress-item-val.safe {
+  color: var(--color-blue);
+}
+
+.progress-item-val.danger {
+  color: var(--danger-red);
+}
+
+.progress-bg-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-bar-fill.blue {
+  background-color: var(--color-blue);
+}
+
+.progress-bar-fill.red {
+  background-color: var(--danger-red);
+}
+
+/* 사이드바 설명 상자 */
+.panel-guide-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.panel-guide-box.safe {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.panel-guide-box.danger {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+/* 다크 매칭 사이드바 추천판 */
+.sidebar-card-dark {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  color: #e2e8f0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 640px) {
+  .sidebar-card-dark {
+    padding: 24px;
+  }
+}
+
+.sidebar-card-dark-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sidebar-card-dark-icon {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.sidebar-card-dark-title {
+  font-size: 11px;
+  font-weight: 900;
+  color: #f8fafc;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dark-card-inner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dark-card-panel {
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.dark-p-badge {
+  font-size: 9px;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.dark-p-badge.blue {
+  background-color: var(--color-blue);
+}
+
+.dark-p-badge.amber {
+  background-color: #d97706;
+}
+
+.dark-p-text {
+  font-size: 12px;
+  color: #f1f5f9;
+  line-height: 1.5;
+  font-weight: 750;
+  word-break: keep-all;
+}
+
+.dark-p-body-desc {
+  font-size: 11.5px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+/* 수정중 안내 경고 줄 */
+.edit-mode-alert-bar {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .edit-mode-alert-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+
+.edit-mode-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-mode-icon-box {
+  padding: 8px;
+  background-color: #fef3c7;
+  color: #b45309;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.edit-mode-title {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: #78350f;
+}
+
+.edit-mode-desc {
+  font-size: 11px;
+  color: #b45309;
+  margin-top: 2px;
+  font-weight: 500;
+}
